@@ -54,6 +54,13 @@ let currentPlayer = 1;//could be overridden wuth random generator button and sho
 */
 
 //========================Game functions==============================================
+/*to be complete
+let randomPlayerOnStart = function(){//see who goes first
+ currentPlayer = Math.ceil(Math.random()*2);
+ initBoard();
+}
+*/
+
 let initBoard = function(){//initialize the game state in the data structure behind the user interface - currently sets all tile states to 0 (not onwned by first player :tilestate 1 or second player: tile state 2)
   for (let r = 0; r < numRows; r++){
       for (let c = 0; c < numCols; c++){
@@ -83,16 +90,23 @@ let drawBoard = function(){//draw the user interface in the canvas to represent 
         ctx.fillRect(c*spacingHor, r*spacingVert, xFill, yFill);                
       }
   }
+  document.getElementById("playerTurn").innerHTML="It is currently player "+ currentPlayer +"'s turn"
   document.getElementById("playAgainButton").innerHTML="Game in Progress, Click to reset";
 }
 
 let gameOver = function(gameState){//determine who wins or draw
- if (gameState == 1)
+ if (gameState == 1){
    document.getElementById("playAgainButton").innerHTML="Player 1 wins! Click to play again";
-  else if (gameState == 2)
+   document.getElementById("playerTurn").innerHTML="GameOver";
+   }
+  else if (gameState == 2){
    document.getElementById("playAgainButton").innerHTML="Player 2 wins! Click to play again";
-  else
+   document.getElementById("playerTurn").innerHTML="GameOver";
+   }
+  else{
    document.getElementById("playAgainButton").innerHTML="It's a tie! Click to play again";
+   document.getElementById("playerTurn").innerHTML="GameOver";
+  }
 
   clickable=false;
   console.log("Test"); 
