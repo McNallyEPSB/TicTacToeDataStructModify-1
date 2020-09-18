@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-    <title>Checker Board</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
+	<title>Predator, Prey Automata</title>
+	<!-- http://technologies4.me/examples/ai/automata-predator-prey/ -->
 </head>
 <body>
 
-
-
-        <canvas id="myCanvas"></canvas>
-        <p id="playerTurn">It is currently player 1's turn</p>
-        <!--<button id="randomPlayerOnStart" onClick="randomPlayerOnStart()">Please click me to see who goes first!</button>-->
-        <button id="playAgainButton" onClick="initBoard()">Game in Progress, Click to reset</button>
-        <script src='main.js'></script>
-        
-
-
-
-
-
+	<canvas id="map" width="600" height="400">
+		This example requires Javascript &amp; Canvas
+	</canvas>
+	
+	<script type="text/javascript" src="cell.js"></script>
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="core.js"></script>
 
 </body>
-
 </html>
-
-
